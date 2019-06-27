@@ -64,14 +64,30 @@ static int32_t SystemFanSense_Work(void) {
 		float systemp = Sensor_GetTemp(TC_COLD_JUNCTION);
 
 		// Sort this out with something better at some point
+		// 100%
 		if (systemp > 50.0f) {
 			sysfanspeed = 0xff;
+		// 87%
 		} else if (systemp > 45.0f) {
-			sysfanspeed = 0xc0;
+			sysfanspeed = 0xdf;
+		// 75%
 		} else if (systemp > 42.0f) {
-			sysfanspeed = 0x80;
+			sysfanspeed = 0xbf;
+		// 62%
 		} else if (systemp > 40.0f) {
-			sysfanspeed = 0x50;
+			sysfanspeed = 0x9f;
+		// 50%
+		} else if (systemp > 37.0f) {
+			sysfanspeed = 0x7f;
+		// 37%
+		} else if (systemp > 35.0f) {
+			sysfanspeed = 0x5f;
+		// 25%
+		} else if (systemp > 30.0f) {
+			sysfanspeed = 0x3f;
+		// 12%
+		} else if (systemp > 20.0f) {
+			sysfanspeed = 0x1f;
 		}
 	} else {
 		// No sensor, run at full speed as a precaution
