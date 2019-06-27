@@ -14,30 +14,32 @@
 
 extern uint8_t graphbmp[];
 
-// Amtech 4300 63Sn/37Pb leaded profile
+// 20 sec dwell time for all profiles
+
+// Chip Quik Thermally Stable Solder Paste No-Clean Sn63/Pb37 T4 leaded profile - TS391AX
 static const profile am4300profile = {
-	"4300 63SN/37PB", {
-		 50, 50, 50, 60, 73, 86,100,113,126,140,143,147,150,154,157,161, // 0-150s
-		164,168,171,175,179,183,195,207,215,207,195,183,168,154,140,125, // Adjust peak from 205 to 220C
+	"QC TS 63SN/37PB", {
+		 50, 50, 50, 60, 73, 86,100,113,126,140,145,150,155,163,173,183, // 0-150s
+		191,200,210,220,230,235,235,235,220,205,190,183,168,154,140,125, // Adjust peak from 205 to 220C
 		111, 97, 82, 68, 54,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0  // 320-470s
 	}
 };
 
-// NC-31 low-temp lead-free profile
+// Chip Quik Thermally Stable Solder Paste No-Clean Sn42/Bi57.6/Ag0.4 T4 low-temp lead-free profile - TS391LT
 static const profile nc31profile = {
-	"NC-31 LOW-TEMP LF", {
+	"QC TS LOW-TEMP LF", {
 		 50, 50, 50, 50, 55, 70, 85, 90, 95,100,102,105,107,110,112,115, // 0-150s
-		117,120,122,127,132,138,148,158,160,158,148,138,130,122,114,106, // Adjust peak from 158 to 165C
+		120,125,130,133,135,140,150,160,165,165,165,158,148,138,123,108, // Adjust peak from 158 to 165C
 		 98, 90, 82, 74, 66, 58,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0  // 320-470s
 	}
 };
 
-// SynTECH-LF normal temp lead-free profile
+// Chip Quik Thermally Stable Solder Paste No-Clean Sn96.5/Ag3.0/Cu0.5 T4 lead-free profile - TS391SNL
 static const profile syntechlfprofile = {
-	"AMTECH SYNTECH-LF", {
-		 50, 50, 50, 50, 60, 70, 80, 90,100,110,120,130,140,149,158,166, // 0-150s
-		175,184,193,201,210,219,230,240,245,240,230,219,212,205,198,191, // Adjust peak from 230 to 249C
-		184,177,157,137,117, 97, 77, 57,  0,  0,  0,  0,  0,  0,  0,  0  // 320-470s
+	"QC TS TS391SNL LF", {
+		 50, 50, 50, 60, 73, 86,100,113,126,140,145,150,155,160,165,170, // 0-150s
+		177,185,195,205,215,225,235,245,249,249,249,240,230,217,205,190, // Adjust peak from 230 to 249C
+		175,160,145,130,115, 97, 77, 57,  0,  0,  0,  0,  0,  0,  0,  0  // 320-470s
 	}
 };
 
