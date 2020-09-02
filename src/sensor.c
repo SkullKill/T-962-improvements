@@ -30,6 +30,13 @@
 */
 //#define MINTEMPOVERRIDE
 
+// i have a sensor glued to a blank PCB board, temp from there will be more accurate
+// force it to only use Temp 2
+//#define S2TEMPOVERRIDE
+//#define MINTEMPOVERRIDE
+// force it to only use Temp 3
+//#define S3TEMPOVERRIDE
+
 // Gain adjust, this may have to be calibrated per device if factory trimmer adjustments are off
 static float adcgainadj[2];
  // Offset adjust, this will definitely have to be calibrated per device
@@ -176,6 +183,30 @@ void Sensor_DoConversion(void) {
 			newtemp = temperature[i];
 		}
 	}
+	if (avgtemp != newtemp) {
+		avgtemp = newtemp;
+	}
+#endif
+#ifdef S2TEMPOVERRIDE
+	// force it to only use Temp 2
+	float newtemp = avgtemp;
+	
+	if (tcpresent[2]) {
+		newtemp = temperature[2];
+	}
+	
+	if (avgtemp != newtemp) {
+		avgtemp = newtemp;
+	}
+#endif
+#ifdef S3TEMPOVERRIDE
+	// force it to only use Temp 3
+	float newtemp = avgtemp;
+	
+	if (tcpresent[3]) {
+		newtemp = temperature[3];
+	}
+	
 	if (avgtemp != newtemp) {
 		avgtemp = newtemp;
 	}
