@@ -35,6 +35,7 @@ static const profile nc31profile = {
 };
 
 // Chip Quik Thermally Stable Solder Paste No-Clean Sn96.5/Ag3.0/Cu0.5 T4 lead-free profile - TS391SNL
+/*
 static const profile syntechlfprofile = {
 	"QC TS TS391SNL LF", {
 		 50, 50, 50, 60, 73, 86,100,113,126,140,145,150,155,160,165,170, // 0-150s
@@ -42,6 +43,17 @@ static const profile syntechlfprofile = {
 		175,160,145,130,115, 97, 77, 57,  0,  0,  0,  0,  0,  0,  0,  0  // 320-470s
 	}
 };
+*/
+
+// Chip Quik Thermally Stable Solder Paste No-Clean Sn96.5/Ag3.0/Cu0.5 T4 lead-free profile - TS391SNL // no dwell time
+static const profile syntechlfprofile = {
+	"QC TS TS391SNL LF", {
+		 50, 50, 50, 60, 73, 86,100,113,126,140,145,150,155,160,165,170, // 0-150s
+		175,180,185,195,205,215,225,235,245,249,245,232,217,200,185,170, // Adjust peak from 230 to 249C
+		160,145,130,115,100, 85, 70, 55,  0,  0,  0,  0,  0,  0,  0,  0  // 320-470s
+	}
+};
+
 
 #ifdef RAMPTEST
 // Ramp speed test temp profile
